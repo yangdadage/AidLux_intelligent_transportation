@@ -160,7 +160,9 @@ if __name__ == '__main__':
     # 加载Aidlite检测模型：支持tflite, tnn, mnn, ms, nb格式的模型加载
     aidlite.ANNModel(model_path, in_shape, out_shape, 4, 0)
     
-    imgs_path = "/home/intelligent_transportation/Lesson5_code/yolov5_code/data/images/tests"
+    # imgs_path = "/home/intelligent_transportation/Lesson5_code/yolov5_code/data/images/tests"
+    # imgs_path = '/home/intelligent_transportation/AI_test_data/test_adv'
+    
     # 设置测试集路径
     images_lst = os.listdir(imgs_path)
     images_lst = [p for p in images_lst if p.endswith('jpg') or p.endswith('png')]
@@ -223,7 +225,6 @@ if __name__ == '__main__':
 
     for img in img_res:
         ### 对抗攻击监测
-        print(img.size())
         detect_pred = detect_model(img)
         print(detect_pred)
 
